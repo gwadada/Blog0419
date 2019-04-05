@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block css %}
+{{ parent() }}
+    <link rel="stylesheet" href="/css/homepage.css">
+{% endblock %}
+{% block body %}
+    <h1>Liste des articles</h1>
+    <ul>
+        {% for article in articles %}
+        <li>{{ article.title }}</li>
+            <a href="{{ path('app_frontarticle_show',{slug:article.slug}) }}">detail</a>
+        {%  endfor %}
+    </ul>
+    <h1>Bonjour</h1>
+{% endblock %}
